@@ -8,12 +8,14 @@
     "preview": "astro preview",
     "sync": "astro sync",
     "upgrade": "pnpm dlx @astrojs/upgrade",
-    "check": "pnpm run check:astro && pnpm run check:js && pnpm run check:format",
+    "check": "pnpm run check:astro && pnpm run check:js && pnpm run check:css && pnpm run check:format",
     "check:astro": "astro check",
     "check:js": "eslint .",
+    "check:css": "stylelint .",
     "check:format": "prettier --check --ignore-unknown .",
-    "fix": "pnpm run fix:js && pnpm run fix:format",
+    "fix": "pnpm run fix:js && pnpm run fix:css && pnpm run fix:format",
     "fix:js": "eslint --fix .",
+    "fix:css": "stylelint --fix .",
     "fix:format": "prettier --write --ignore-unknown .",
     "prepare": "husky"
   },
@@ -33,8 +35,12 @@
     "eslint-plugin-astro": "^1.3.1",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
+    "postcss-html": "^1.8.0",
     "prettier": "^3.6.2",
     "prettier-plugin-astro": "^0.14.1",
+    "stylelint": "^16.24.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recommended": "^17.0.0",
     "typescript-eslint": "^8.44.0"
   }
 }
