@@ -8,7 +8,11 @@
     "preview": "astro preview",
     "sync": "astro sync",
     "upgrade": "pnpm dlx @astrojs/upgrade",
-    "check": "astro check",
+    "check": "pnpm run check:astro && pnpm run check:format",
+    "check:astro": "astro check",
+    "check:format": "prettier --check --ignore-unknown .",
+    "fix": "pnpm run fix:format",
+    "fix:format": "prettier --write --ignore-unknown .",
     "prepare": "husky"
   },
   "dependencies": {
@@ -20,6 +24,8 @@
     "@astrojs/check": "^0.9.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "husky": "^9.1.7"
+    "husky": "^9.1.7",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
