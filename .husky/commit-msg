@@ -1,0 +1,3 @@
+echo -e "running commitlint..."
+pnpm commitlint --edit $1
+echo -e "commitlint completed successfully"

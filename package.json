@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "sync": "astro sync",
     "upgrade": "pnpm dlx @astrojs/upgrade",
-    "check": "astro check"
+    "check": "astro check",
+    "prepare": "husky"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.5",
@@ -16,6 +17,9 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.4"
+    "@astrojs/check": "^0.9.4",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "husky": "^9.1.7"
   }
 }
