@@ -1,0 +1,119 @@
+---
+import fallbackImg from "#assets/images/fallback.jpg";
+import type { ImageMetadata } from "astro";
+
+/** fallback description of the page */
+const fallbackDescription = "Sitio web de Jesús Castañer.";
+
+/** props for the base layout */
+type Props = {
+  /**
+   * title of the page
+   */
+  title: string;
+  /**
+   * description of the page.
+   * if not provided, a fallback description will be used
+   */
+  description?: string;
+  /**
+   * image of the page.
+   * if not provided, a fallback image will be used
+   */
+  image?: ImageMetadata;
+};
+const {
+  title,
+  description = fallbackDescription,
+  image = fallbackImg,
+} = Astro.props;
+
+/* full title of the page */
+const fullTitle = `${title} – jesuscastaner.com`;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- global metadata -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/favicon.svg"
+    />
+    <meta
+      name="generator"
+      content={Astro.generator}
+    />
+
+    <!-- canonical url -->
+    <link
+      rel="canonical"
+      href={new URL(Astro.url.pathname, Astro.site)}
+    />
+
+    <!-- primary meta tags -->
+    <title>{fullTitle}</title>
+    <meta
+      name="title"
+      content={fullTitle}
+    />
+    <meta
+      name="description"
+      content={description}
+    />
+
+    <!-- open graph / facebook -->
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta
+      property="og:url"
+      content={Astro.url}
+    />
+    <meta
+      property="og:title"
+      content={title}
+    />
+    <meta
+      property="og:description"
+      content={description}
+    />
+    <meta
+      property="og:image"
+      content={new URL(image.src, Astro.url)}
+    />
+
+    <!-- twitter -->
+    <meta
+      property="twitter:card"
+      content="summary_large_image"
+    />
+    <meta
+      property="twitter:url"
+      content={Astro.url}
+    />
+    <meta
+      property="twitter:title"
+      content={title}
+    />
+    <meta
+      property="twitter:description"
+      content={description}
+    />
+    <meta
+      property="twitter:image"
+      content={new URL(image.src, Astro.url)}
+    />
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
