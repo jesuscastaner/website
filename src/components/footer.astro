@@ -4,6 +4,9 @@ import type { HTMLAttributes } from "astro/types";
 /** props for the footer component */
 type Props = HTMLAttributes<"footer">;
 const { class: className, ...props } = Astro.props as Props;
+
+/** the current year */
+const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -14,5 +17,7 @@ const { class: className, ...props } = Astro.props as Props;
   ]}
 >
   <!-- copyright -->
-  <small>© 2025 Jesús Castañer. Todos los derechos reservados.</small>
+  <small>
+    © {currentYear} Jesús Castañer. Todos los derechos reservados.
+  </small>
 </footer>
