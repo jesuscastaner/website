@@ -56,5 +56,11 @@ export default defineConfig({
 
   // ignore these files
   useGitignore: true,
-  ignorePaths: [".git/**"],
+  ignorePaths: [
+    ".git/**",
+    "*.json",
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+  ],
 });
