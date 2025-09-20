@@ -2,7 +2,7 @@
 export default {
   // rules
   extends: [
-    "stylelint-config-recommended",
+    "stylelint-config-standard",
     "stylelint-config-html",
     "stylelint-config-tailwindcss",
   ],
