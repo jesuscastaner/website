@@ -1,0 +1,3 @@
+echo -e "running lint-staged..."
+pnpm lint-staged
+echo -e  "lint-staged completed successfully"
