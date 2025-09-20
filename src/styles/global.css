@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff;
+  --foreground: #000;
+  --accent: #07ce00;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+}
+
+@layer base {
+  * {
+    @apply outline-accent;
+  }
+
+  html {
+    @apply overflow-y-scroll scroll-smooth;
+  }
+
+  body {
+    @apply text-foreground bg-background selection:bg-foreground
+    selection:text-background container mx-auto flex min-h-screen flex-col
+    px-6 leading-relaxed antialiased md:text-lg;
+  }
+
+  main {
+    @apply flex-1;
+  }
+
+  a {
+    @apply underline hover:text-accent hover:selection:text-accent;
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl my-6;
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl my-6;
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl my-6;
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl my-6;
+  }
+}
