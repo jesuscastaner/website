@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+/** props for the footer component */
+type Props = HTMLAttributes<"footer">;
+const { class: className, ...props } = Astro.props as Props;
+---
+
+<footer
+  {...props}
+  class:list={[
+    "bg-background static right-0 bottom-0 left-0 mt-4 text-center",
+    className,
+  ]}
+>
+  <!-- copyright -->
+  <small>© 2025 Jesús Castañer. Todos los derechos reservados.</small>
+</footer>
