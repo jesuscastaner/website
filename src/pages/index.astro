@@ -1,8 +1,12 @@
 ---
+import { PAGES } from "#consts";
 import Layout from "#layouts/layout.astro";
 ---
 
-<Layout title=`Inicio`>
+<Layout
+  title={PAGES.home.name}
+  description={PAGES.home.description}
+>
   <p>
     <strong>Jesús Castañer</strong> (Madrid, 1996) es compositor y crítico de música.
     Sus obras han sido interpretadas por solistas y agrupaciones de proyección internacional,

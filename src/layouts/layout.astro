@@ -1,12 +1,10 @@
 ---
 import fallbackImg from "#assets/images/fallback.jpg";
 import Footer from "#components/footer.astro";
+import { SITE } from "#consts";
 import "#styles/global.css";
 import type { ImageMetadata } from "astro";
 import { Font } from "astro:assets";
-
-/** fallback description of the page */
-const fallbackDescription = "Sitio web de Jesús Castañer.";
 
 /** props for the base layout */
 type Props = {
@@ -27,16 +25,16 @@ type Props = {
 };
 const {
   title,
-  description = fallbackDescription,
+  description = SITE.description,
   image = fallbackImg,
 } = Astro.props;
 
 /* full title of the page */
-const fullTitle = `${title} – jesuscastaner.com`;
+const fullTitle = `${title} – ${SITE.name}`;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={SITE.lang}>
   <head>
     <!-- global metadata -->
     <meta charset="utf-8" />
