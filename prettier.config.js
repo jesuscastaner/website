@@ -6,7 +6,7 @@ export default {
   singleAttributePerLine: true,
 
   // plugin settings
-  plugins: ["prettier-plugin-astro"],
+  plugins: ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
   overrides: [
     {
       files: "*.astro",
