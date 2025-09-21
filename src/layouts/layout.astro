@@ -1,6 +1,7 @@
 ---
 import fallbackImg from "#assets/images/fallback.jpg";
 import Footer from "#components/footer.astro";
+import Header from "#components/header.astro";
 import { SITE } from "#consts";
 import "#styles/global.css";
 import type { ImageMetadata } from "astro";
@@ -121,6 +122,7 @@ const fullTitle = `${title} – ${SITE.name}`;
   </head>
 
   <body>
+    <Header />
     <main>
       <slot />
     </main>

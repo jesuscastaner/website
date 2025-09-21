@@ -1,0 +1,66 @@
+---
+import { PAGES, SITE } from "#consts";
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
+
+/** props for the header component */
+type Props = HTMLAttributes<"header">;
+const { class: className, ...props } = Astro.props as Props;
+
+/** site pages, excluding home */
+const pages = Object.values(PAGES).filter((page) => page.href !== "/");
+/** current path without base url */
+const path = Astro.url.pathname.replace(import.meta.env.BASE_URL, "");
+/** current subpath segments */
+const segments = path.match(/[^/]+/g);
+---
+
+<header
+  {...props}
+  class:list={[
+    "bg-background sticky top-0 right-0 left-0 z-50 flex h-14 items-center justify-between",
+    className,
+  ]}
+>
+  <a
+    href={PAGES.home.href}
+    title={PAGES.home.name}
+    class="mr-6 lowercase no-underline"
+  >
+    {SITE.name}
+  </a>
+
+  <!-- navbar -->
+  <nav>
+    <ul class="flex gap-6">
+      {
+        pages.map((page) => {
+          /** whether the navbar item is currently active */
+          const isActive =
+            page.href === path || page.href === "/" + (segments?.[0] || "");
+
+          return (
+            <li>
+              <a
+                href={page.href}
+                title={page.name}
+                class:list={[
+                  "flex items-center gap-1 lowercase no-underline",
+                  { active: isActive },
+                ]}
+              >
+                {isActive && (
+                  <Icon
+                    name="location"
+                    size={18}
+                  />
+                )}
+                {page.name}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</header>
