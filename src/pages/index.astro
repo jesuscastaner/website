@@ -1,6 +1,10 @@
 ---
-import { PAGES } from "#consts";
+import { PAGES, SOCIALS } from "#consts";
 import Layout from "#layouts/layout.astro";
+import { Icon } from "astro-icon/components";
+
+/** linkedin profile */
+const linkedin = SOCIALS.find((social) => social.name === "LinkedIn");
 ---
 
 <Layout
@@ -24,4 +28,22 @@ import Layout from "#layouts/layout.astro";
   >
     Contactar
   </a>
+
+  {
+    linkedin && (
+      <a
+        title="Ver CV"
+        href={linkedin.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-1"
+      >
+        Ver CV
+        <Icon
+          name="open-in-new"
+          size={16}
+        />
+      </a>
+    )
+  }
 </Layout>
