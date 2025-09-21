@@ -34,4 +34,12 @@ export const PAGES = {
     href: "/posts",
     description: "Publicaciones de Jesús Castañer.",
   },
+  /**
+   * contact page
+   */
+  contact: {
+    name: "Contacto",
+    href: "/contact",
+    description: "Página de contacto de Jesús Castañer.",
+  },
 } as const satisfies Record<string, SitePage>;
