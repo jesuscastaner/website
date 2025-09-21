@@ -1,0 +1,24 @@
+---
+import Layout from "#layouts/layout.astro";
+import { Icon } from "astro-icon/components";
+import type { ComponentProps } from "astro/types";
+
+/** props for the wip (work-in-progress) layout */
+type Props = Pick<ComponentProps<typeof Layout>, "title" | "image">;
+const { title, image } = Astro.props;
+---
+
+<Layout
+  title={title}
+  description="En construcción..."
+  image={image}
+>
+  <div class="flex flex-col text-center items-center">
+    <p>En construcción...</p>
+    <Icon
+      name="hammer"
+      size={24}
+      class="text-foreground animate-spin"
+    />
+  </div>
+</Layout>
