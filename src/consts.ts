@@ -1,4 +1,4 @@
-import type { SitePage } from "#types";
+import type { SitePage, Social } from "#types";
 
 /* site metadata */
 export const SITE = {
@@ -43,3 +43,37 @@ export const PAGES = {
     description: "Página de contacto de Jesús Castañer.",
   },
 } as const satisfies Record<string, SitePage>;
+
+/** social media links */
+export const SOCIALS = [
+  {
+    name: "LinkedIn",
+    href: "https://linkedin.com/in/jesuscastaner/",
+    iconSlug: "logos/linkedin",
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/jesuscastaner",
+    iconSlug: "logos/github",
+  },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/profile.php?id=100007511928598",
+    iconSlug: "logos/facebook",
+  },
+  {
+    name: "Instagram",
+    href: "https://instagram.com/jesuscastaner/",
+    iconSlug: "logos/instagram",
+  },
+  {
+    name: "X (Twitter)",
+    href: "https://x.com/jesuscastaner",
+    iconSlug: "logos/twitter",
+  },
+  {
+    name: "Mastodon",
+    href: "https://mastodon.social/@jesuscastaner",
+    iconSlug: "logos/mastodon",
+  },
+] satisfies Social[];

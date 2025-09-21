@@ -1,4 +1,6 @@
 ---
+import { SOCIALS } from "#consts";
+import { Icon } from "astro-icon/components";
 import type { HTMLAttributes } from "astro/types";
 
 /** props for the footer component */
@@ -16,6 +18,26 @@ const currentYear = new Date().getFullYear();
     className,
   ]}
 >
+  <!-- socials -->
+  <ul class="flex flex-wrap justify-center gap-4">
+    {
+      SOCIALS.map(({ name, href, iconSlug }) => (
+        <li class="flex items-center">
+          <a
+            href={href}
+            title={name}
+          >
+            <Icon
+              name={iconSlug}
+              title={name}
+              size={30}
+            />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
   <!-- copyright -->
   <small>
     © {currentYear} Jesús Castañer. Todos los derechos reservados.

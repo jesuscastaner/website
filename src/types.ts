@@ -13,3 +13,19 @@ export type SitePage = {
    */
   description: string;
 };
+
+/** social media link */
+export type Social = {
+  /**
+   * name of the social media platform
+   */
+  name: string;
+  /**
+   * link to the social media profile
+   */
+  href: string;
+  /**
+   * icon of the social media platform
+   */
+  iconSlug: string;
+};
