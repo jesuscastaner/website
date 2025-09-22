@@ -1,0 +1,26 @@
+---
+import Link from "#components/link.astro";
+import { PAGES } from "#consts";
+import Layout from "#layouts/layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout
+  title="404"
+  description="Página no encontrada"
+>
+  <h1>404 – Página no encontrada</h1>
+  <p>La página no existe o ha sido movida.</p>
+  <div class="mt-6">
+    <Link
+      href={PAGES.home.href}
+      title={PAGES.home.name}
+    >
+      <Icon
+        name="arrow"
+        class="inline -rotate-90"
+      />
+      Ir al inicio
+    </Link>
+  </div>
+</Layout>
