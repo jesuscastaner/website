@@ -59,6 +59,7 @@ export default defineConfig({
   ignorePaths: [
     ".git/**",
     "*.json",
+    "src/assets/**",
     "package-lock.json",
     "pnpm-lock.yaml",
     "pnpm-workspace.yaml",
