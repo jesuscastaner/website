@@ -11,32 +11,42 @@ const linkedin = SOCIALS.find((social) => social.name === "LinkedIn");
   title={PAGES.home.name}
   description={PAGES.home.description}
 >
-  <p>
-    <strong>Jesús Castañer</strong> (Madrid, 1996) es compositor y crítico de música.
-    Sus obras han sido interpretadas por solistas y agrupaciones de proyección internacional,
-    como Patricia Kopatchinskaja, Camerata Bern, Quatuor Diotima o la Orquesta de
-    Valencia, entre otros. Como crítico, colabora de forma habitual en la revista
-    <em>Scherzo</em>, donde publica artículos, entrevistas y reseñas de
-    conciertos y grabaciones. Ha sido autor de textos de programas de mano y
-    libretos de álbumes discográficos para los BBC Proms, Philharmonie
-    Luxembourg, Pentatone e Ibs Classical.
-  </p>
+  <div class="my-6">
+    <!-- bio -->
+    <p>
+      <strong>Jesús Castañer</strong> (Madrid, 1996) es compositor y crítico de música.
+      Sus obras han sido interpretadas por solistas y agrupaciones de proyección
+      internacional, como Patricia Kopatchinskaja, Camerata Bern, Quatuor Diotima
+      o la Orquesta de Valencia, entre otros. Como crítico, colabora de forma habitual
+      en la revista <em>Scherzo</em>, donde publica artículos, entrevistas y
+      reseñas de conciertos y grabaciones. Ha sido autor de textos de programas
+      de mano y libretos de álbumes discográficos para los BBC Proms,
+      Philharmonie Luxembourg, Pentatone e Ibs Classical.
+    </p>
 
-  <Link
-    title="Contactar"
-    href={PAGES.contact.href}
-  >
-    Contactar
-  </Link>
-
-  {
-    linkedin && (
+    <!-- buttons -->
+    <div class="mt-6 flex flex-col gap-4 md:flex-row md:gap-6">
       <Link
-        title="Ver CV"
-        href={linkedin.href}
+        title="Contactar"
+        href={PAGES.contact.href}
+        noUnderline
+        class="hover:text-accent text-background bg-foreground border-foreground hover:border-accent border-2 px-18 py-2 text-center"
       >
-        Ver CV
+        Contactar
       </Link>
-    )
-  }
+
+      {
+        linkedin && (
+          <Link
+            title="Ver CV"
+            href={linkedin.href}
+            noUnderline
+            class="border-2 px-18 py-2 text-center"
+          >
+            Ver CV
+          </Link>
+        )
+      }
+    </div>
+  </div>
 </Layout>

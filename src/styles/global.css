@@ -23,7 +23,7 @@
   }
 
   body {
-    @apply font-default text-foreground bg-background selection:bg-foreground selection:text-background container mx-auto flex min-h-screen flex-col px-6 leading-relaxed antialiased md:text-lg;
+    @apply font-default text-foreground bg-background selection:bg-foreground selection:text-background container mx-auto flex min-h-screen flex-col px-6 leading-relaxed antialiased;
   }
 
   main {

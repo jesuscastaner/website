@@ -15,12 +15,12 @@ const currentYear = new Date().getFullYear();
 <footer
   {...props}
   class:list={[
-    "bg-background static right-0 bottom-0 left-0 mt-4 text-center",
+    "bg-background mt-6 flex flex-col gap-4 border-t-2 py-6 text-center",
     className,
   ]}
 >
   <!-- socials -->
-  <ul class="flex flex-wrap justify-center gap-4">
+  <ul class="flex flex-wrap justify-center gap-4 sm:gap-6">
     {
       SOCIALS.map(({ name, href, iconSlug }) => (
         <li class="flex items-center">
@@ -29,10 +29,10 @@ const currentYear = new Date().getFullYear();
             title={name}
             hideOpenInNew
             noUnderline
+            class="transition-transform hover:-translate-y-1"
           >
             <Icon
               name={iconSlug}
-              title={name}
               size={30}
             />
           </Link>
