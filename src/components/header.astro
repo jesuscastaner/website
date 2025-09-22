@@ -23,6 +23,7 @@ const segments = path.match(/[^/]+/g);
     className,
   ]}
 >
+  <!-- site name / home link -->
   <Link
     href={PAGES.home.href}
     title={PAGES.home.name}
@@ -32,36 +33,61 @@ const segments = path.match(/[^/]+/g);
     {SITE.name}
   </Link>
 
-  <!-- navbar -->
-  <nav>
-    <ul class="flex gap-6">
-      {
-        pages.map((page) => {
-          /** whether the navbar item is currently active */
-          const isActive =
-            page.href === path || page.href === "/" + (segments?.[0] || "");
+  <!-- menu -->
+  <div class="group">
+    <!-- hamburger button -->
+    <div
+      tabindex="-1"
+      class="md:hidden"
+    >
+      <Icon
+        name="menu"
+        size={20}
+      />
+    </div>
 
-          return (
-            <li>
-              <Link
-                href={page.href}
-                title={page.name}
-                noUnderline
-                class:list={["lowercase", { active: isActive }]}
-              >
-                {isActive && (
-                  <Icon
-                    name="location"
-                    size={18}
-                    class="mr-1 inline"
-                  />
-                )}
-                {page.name}
-              </Link>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </nav>
+    <!-- menu overlay -->
+    <div
+      class="group-focus-within:bg-foreground/30 fixed group-focus-within:inset-0 group-focus-within:transition-colors md:hidden"
+    >
+    </div>
+
+    <!-- menu items -->
+    <div
+      class="bg-background fixed inset-y-0 right-0 z-100 flex w-2/3 translate-x-full flex-col border-l-2 p-6 group-focus-within:translate-x-0 group-focus-within:transition-transform group-focus-within:duration-300 md:relative md:w-auto md:translate-x-0 md:flex-row md:items-center md:border-none md:p-0"
+    >
+      <!-- navbar -->
+      <nav>
+        <ul class="flex flex-col gap-2 md:flex-row md:gap-6">
+          {
+            pages.map((page) => {
+              /** whether the navbar item is currently active */
+              const isActive =
+                page.href === path || page.href === "/" + (segments?.[0] || "");
+
+              return (
+                <li>
+                  <Link
+                    href={page.href}
+                    title={page.name}
+                    noUnderline
+                    class:list={["lowercase", { active: isActive }]}
+                  >
+                    {isActive && (
+                      <Icon
+                        name="location"
+                        size={18}
+                        class="mr-1 inline"
+                      />
+                    )}
+                    {page.name}
+                  </Link>
+                </li>
+              );
+            })
+          }
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
