@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+
+/** props for the link component */
+type Props = {
+  /**
+   * url or path to link to
+   */
+  href: string;
+  /**
+   * title of the link
+   */
+  title?: string;
+  /**
+   * whether to hide the "open-in-new" icon for external links
+   */
+  hideOpenInNew?: boolean;
+  /**
+   * whether to remove the underline from the link
+   */
+  noUnderline?: boolean;
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const {
+  href,
+  title,
+  hideOpenInNew,
+  noUnderline,
+  class: className,
+} = Astro.props;
+
+/** whether the link is external */
+const isExternal = /^https?:\/\//.test(href);
+---
+
+<a
+  href={href}
+  title={title}
+  {...isExternal && { target: "_blank", rel: "noopener noreferrer" }}
+  class:list={[className]}
+>
+  <span class:list={[!noUnderline && "underline"]}>
+    <slot />
+  </span>
+  {
+    isExternal && !hideOpenInNew && (
+      <Icon
+        name="open-in-new"
+        size={14}
+        class="inline"
+      />
+    )
+  }
+</a>

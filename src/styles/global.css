@@ -31,7 +31,7 @@
   }
 
   a {
-    @apply hover:text-accent hover:selection:text-accent underline;
+    @apply hover:text-accent hover:selection:text-accent;
   }
 
   h1 {

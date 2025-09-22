@@ -1,7 +1,7 @@
 ---
+import Link from "#components/link.astro";
 import { PAGES, SOCIALS } from "#consts";
 import Layout from "#layouts/layout.astro";
-import { Icon } from "astro-icon/components";
 
 /** linkedin profile */
 const linkedin = SOCIALS.find((social) => social.name === "LinkedIn");
@@ -21,29 +21,22 @@ const linkedin = SOCIALS.find((social) => social.name === "LinkedIn");
     libretos de álbumes discográficos para los BBC Proms, Philharmonie
     Luxembourg, Pentatone e Ibs Classical.
   </p>
-  <a
+
+  <Link
     title="Contactar"
     href={PAGES.contact.href}
-    class="flex items-center gap-1"
   >
     Contactar
-  </a>
+  </Link>
 
   {
     linkedin && (
-      <a
+      <Link
         title="Ver CV"
         href={linkedin.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-1"
       >
         Ver CV
-        <Icon
-          name="open-in-new"
-          size={16}
-        />
-      </a>
+      </Link>
     )
   }
 </Layout>

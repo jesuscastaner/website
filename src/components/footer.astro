@@ -1,4 +1,5 @@
 ---
+import Link from "#components/link.astro";
 import { SOCIALS } from "#consts";
 import { Icon } from "astro-icon/components";
 import type { HTMLAttributes } from "astro/types";
@@ -23,16 +24,18 @@ const currentYear = new Date().getFullYear();
     {
       SOCIALS.map(({ name, href, iconSlug }) => (
         <li class="flex items-center">
-          <a
+          <Link
             href={href}
             title={name}
+            hideOpenInNew
+            noUnderline
           >
             <Icon
               name={iconSlug}
               title={name}
               size={30}
             />
-          </a>
+          </Link>
         </li>
       ))
     }
