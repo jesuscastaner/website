@@ -1,0 +1,65 @@
+---
+import { SITE } from "#consts";
+import { Icon } from "astro-icon/components";
+
+/** props for the formatted-date component */
+type Props = {
+  /**
+   * date to display
+   */
+  date: Date;
+  /**
+   * format in which the date should be displayed
+   */
+  format?: "long" | "short";
+  /**
+   * locale for date formatting
+   */
+  locale?: string;
+  /**
+   * whether to show the calendar icon
+   */
+  showCalendar?: boolean;
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const {
+  date,
+  format = "long",
+  locale = SITE.lang,
+  showCalendar,
+  class: className,
+} = Astro.props;
+
+/** date format options */
+const formatOptions = {
+  long: {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  },
+  short: {
+    year: "2-digit",
+    month: "numeric",
+    day: "numeric",
+  },
+} satisfies Record<string, Intl.DateTimeFormatOptions>;
+---
+
+<time
+  datetime={date.toISOString()}
+  class:list={[className]}
+>
+  {
+    showCalendar && (
+      <Icon
+        name="calendar"
+        size={14}
+        class="inline"
+      />
+    )
+  }
+  {date.toLocaleDateString(locale, formatOptions[format])}
+</time>

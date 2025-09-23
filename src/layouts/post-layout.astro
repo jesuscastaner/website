@@ -1,0 +1,44 @@
+---
+import FormattedDate from "#components/formatted-date.astro";
+import Layout from "#layouts/layout.astro";
+import type { CollectionEntry } from "astro:content";
+
+/** props for the post layout */
+type Props = {
+  /**
+   * post to render
+   */
+  post: CollectionEntry<"posts">;
+};
+const { post } = Astro.props;
+---
+
+<Layout
+  title={post.data.title}
+  description={`${post.data.title} – por ${post.data.authors}.`}
+>
+  <article>
+    <header>
+      <!-- title -->
+      <h1>{post.data.title}</h1>
+
+      <!-- author(s) -->
+      <span class="text-2xl">{post.data.authors}</span>
+
+      <!-- publication date -->
+      <span>
+        –
+        <FormattedDate
+          date={post.data.pubDate}
+          showCalendar
+          class="my-6 inline"
+        />
+      </span>
+    </header>
+
+    <!-- post body -->
+    <div class="mt-6">
+      <slot />
+    </div>
+  </article>
+</Layout>

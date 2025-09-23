@@ -49,4 +49,8 @@
   h4 {
     @apply my-6 text-xl lg:text-2xl;
   }
+
+  p {
+    @apply my-6;
+  }
 }

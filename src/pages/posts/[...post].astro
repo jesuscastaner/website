@@ -1,0 +1,31 @@
+---
+import PostLayout from "#layouts/post-layout.astro";
+import type { GetStaticPaths } from "astro";
+import type { ComponentProps } from "astro/types";
+import { getCollection, render } from "astro:content";
+
+/** props for the post page generator */
+type Props = Pick<ComponentProps<typeof PostLayout>, "post">;
+const { post } = Astro.props;
+
+/**
+ * generates static paths for each post page
+ * @returns array of static paths for each post page
+ */
+export const getStaticPaths = (async () => {
+  /** all posts */
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { post: post.id },
+    props: { post },
+  }));
+}) satisfies GetStaticPaths;
+
+// rendered post content
+const { Content } = await render(post);
+---
+
+<PostLayout post={post}>
+  <Content />
+</PostLayout>
