@@ -1,6 +1,25 @@
 ---
+import Link from "#components/link.astro";
 import { PAGES } from "#consts";
-import WipLayout from "#layouts/wip-layout.astro";
+import Layout from "#layouts/layout.astro";
+import { getCollection } from "astro:content";
+
+/** all posts */
+const posts = await getCollection("posts");
 ---
 
-<WipLayout title={PAGES.posts.name} />
+<Layout
+  title={PAGES.posts.name}
+  description={PAGES.posts.description}
+>
+  <h1>Publicaciones</h1>
+  <ul class="ml-3.5 list-[square]">
+    {
+      posts.map((post) => (
+        <li>
+          <Link href={`${PAGES.posts.href}/${post.id}`}>{post.data.title}</Link>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>
