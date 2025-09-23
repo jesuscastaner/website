@@ -13,7 +13,13 @@ export default defineConfig([
   {
     languageOptions: { globals: globals.browser },
   },
-
+  {
+    // use type aliases over interfaces
+    files: ["**/*.astro", "**/*.cts", "**/*.mts", "**/*.ts", "**/*.tsx"],
+    rules: {
+      "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    },
+  },
   // ignore files listed in .gitignore
   includeIgnoreFile(fileURLToPath(new URL(".gitignore", import.meta.url))),
 ]);
