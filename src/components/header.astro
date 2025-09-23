@@ -2,11 +2,15 @@
 import Link from "#components/link.astro";
 import { PAGES, SITE } from "#consts";
 import { Icon } from "astro-icon/components";
-import type { HTMLAttributes } from "astro/types";
 
 /** props for the header component */
-type Props = HTMLAttributes<"header">;
-const { class: className, ...props } = Astro.props as Props;
+type Props = {
+  /**
+   * additional classes
+   */
+  class: string;
+};
+const { class: className } = Astro.props;
 
 /** site pages, excluding home */
 const pages = Object.values(PAGES).filter((page) => page.href !== "/");
@@ -17,7 +21,6 @@ const segments = path.match(/[^/]+/g);
 ---
 
 <header
-  {...props}
   class:list={[
     "bg-background sticky top-0 z-50 mb-6 flex items-center justify-between border-b-2 py-6",
     className,

@@ -2,18 +2,21 @@
 import Link from "#components/link.astro";
 import { SOCIALS } from "#consts";
 import { Icon } from "astro-icon/components";
-import type { HTMLAttributes } from "astro/types";
 
 /** props for the footer component */
-type Props = HTMLAttributes<"footer">;
-const { class: className, ...props } = Astro.props as Props;
+type Props = {
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { class: className } = Astro.props;
 
 /** the current year */
 const currentYear = new Date().getFullYear();
 ---
 
 <footer
-  {...props}
   class:list={[
     "bg-background mt-6 flex flex-col gap-4 border-t-2 py-6 text-center",
     className,
