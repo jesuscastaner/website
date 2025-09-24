@@ -1,5 +1,6 @@
 ---
 import FormattedDate from "#components/formatted-date.astro";
+import ShareLinks from "#components/share-links.astro";
 import Layout from "#layouts/layout.astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -34,6 +35,9 @@ const { post } = Astro.props;
           class="my-6 inline"
         />
       </span>
+
+      <!-- social share links -->
+      <ShareLinks class="my-6" />
     </header>
 
     <!-- post body -->

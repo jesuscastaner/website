@@ -1,0 +1,72 @@
+---
+import Link from "#components/link.astro";
+import type { Social } from "#types";
+import { Icon } from "astro-icon/components";
+
+/** props for the share-links component */
+type Props = {
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { class: className } = Astro.props;
+
+/** current page url */
+const currentURL = Astro.url;
+/** social share links */
+const shareLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/sharer.php?u=",
+    iconSlug: "logos/facebook",
+  },
+  {
+    name: "X (Twitter)",
+    href: "https://x.com/intent/post?url=",
+    iconSlug: "logos/x-twitter",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/cws/share?url=",
+    iconSlug: "logos/linkedin",
+  },
+  {
+    name: "Telegram",
+    href: "https://t.me/share/url?url=",
+    iconSlug: "logos/telegram",
+  },
+  {
+    name: "WhatsApp",
+    href: "https://wa.me/?text=",
+    iconSlug: "logos/whatsapp",
+  },
+  {
+    name: "Correo electrónico",
+    href: "mailto:?body=",
+    iconSlug: "logos/gmail",
+  },
+] as const satisfies Social[];
+---
+
+<div class:list={["flex items-center gap-3 whitespace-nowrap", className]}>
+  Compartir en:
+  <ul class="flex gap-3">
+    {
+      shareLinks.map((shareLink) => (
+        <li>
+          <Link
+            href={`${shareLink.href + currentURL}`}
+            title={shareLink.name}
+            hideOpenInNew
+          >
+            <Icon
+              name={shareLink.iconSlug}
+              size={16}
+            />
+          </Link>
+        </li>
+      ))
+    }
+  </ul>
+</div>
