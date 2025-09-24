@@ -69,7 +69,7 @@ export const SOCIALS = [
   {
     name: "X (Twitter)",
     href: "https://x.com/jesuscastaner",
-    iconSlug: "logos/twitter",
+    iconSlug: "logos/x-twitter",
   },
   {
     name: "Mastodon",
