@@ -1,3 +1,4 @@
+import { SITE } from "#consts";
 import { glob } from "astro/loaders";
 import { defineCollection, z } from "astro:content";
 
@@ -12,7 +13,7 @@ const posts = defineCollection({
     /**
      * post author(s)
      */
-    authors: z.string().or(z.array(z.string())).default("Jesús Castañer"),
+    authors: z.string().or(z.array(z.string())).default(SITE.author),
     /**
      * post publication date
      */

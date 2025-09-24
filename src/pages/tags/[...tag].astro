@@ -1,6 +1,6 @@
 ---
 import Link from "#components/link.astro";
-import { PAGES } from "#consts";
+import { PAGES, SITE } from "#consts";
 import Layout from "#layouts/layout.astro";
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
@@ -32,7 +32,7 @@ const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
 
 <Layout
   title={tag}
-  description={`Publicaciones de Jesús Castañer con la etiqueta "${tag}".`}
+  description={`Publicaciones de ${SITE.author} con la etiqueta "${tag}".`}
 >
   <p>
     Publicaciones con la etiqueta "{tag}" ({filteredPosts.length}):

@@ -1,6 +1,6 @@
 ---
 import Link from "#components/link.astro";
-import { SOCIALS } from "#consts";
+import { SITE, SOCIALS } from "#consts";
 import { Icon } from "astro-icon/components";
 
 /** props for the footer component */
@@ -46,6 +46,7 @@ const currentYear = new Date().getFullYear();
 
   <!-- copyright -->
   <small>
-    © {currentYear} Jesús Castañer. Todos los derechos reservados.
+    © {currentYear}
+    {SITE.author}. Todos los derechos reservados.
   </small>
 </footer>

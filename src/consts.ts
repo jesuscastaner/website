@@ -1,5 +1,8 @@
 import type { SitePage, Social } from "#types";
 
+/** site author */
+const author = "Jesús Castañer";
+
 /* site metadata */
 export const SITE = {
   /**
@@ -9,7 +12,11 @@ export const SITE = {
   /**
    * site description
    */
-  description: "Sitio web de Jesús Castañer.",
+  description: `Sitio web de ${author}.`,
+  /**
+   * site author
+   */
+  author: author,
   /**
    * site language
    */
@@ -32,7 +39,7 @@ export const PAGES = {
   posts: {
     name: "Publicaciones",
     href: "/posts",
-    description: "Publicaciones de Jesús Castañer.",
+    description: `Publicaciones de ${SITE.author}.`,
   },
   /**
    * tags page
@@ -48,7 +55,7 @@ export const PAGES = {
   contact: {
     name: "Contacto",
     href: "/contact",
-    description: "Página de contacto de Jesús Castañer.",
+    description: `Página de contacto de ${SITE.author}.`,
   },
 } as const satisfies Record<string, SitePage>;
 
