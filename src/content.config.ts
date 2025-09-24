@@ -17,6 +17,10 @@ const posts = defineCollection({
      * post publication date
      */
     pubDate: z.coerce.date(),
+    /**
+     * post tags
+     */
+    tags: z.array(z.string()).default(["otros"]),
   }),
 });
 

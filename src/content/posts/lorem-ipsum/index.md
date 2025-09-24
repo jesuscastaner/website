@@ -1,6 +1,12 @@
 ---
 title: Lorem ipsum
 pubDate: 2025-09-23
+tags:
+  - "lorem"
+  - "ipsum"
+  - "dolor"
+  - "sit"
+  - "amet"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet
