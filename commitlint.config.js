@@ -1,4 +1,4 @@
 export default {
-  // use conventional commits
+  // use conventional commits: https://www.conventionalcommits.org/en/v1.0.0/
   extends: ["@commitlint/config-conventional"],
 };
