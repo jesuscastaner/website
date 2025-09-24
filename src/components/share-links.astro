@@ -49,9 +49,9 @@ const shareLinks = [
 ] as const satisfies Social[];
 ---
 
-<div class:list={["flex items-center gap-3 whitespace-nowrap", className]}>
+<div class:list={["flex items-center gap-4 whitespace-nowrap", className]}>
   Compartir en:
-  <ul class="flex gap-3">
+  <ul class="flex gap-4">
     {
       shareLinks.map((shareLink) => (
         <li>
@@ -62,7 +62,7 @@ const shareLinks = [
           >
             <Icon
               name={shareLink.iconSlug}
-              size={16}
+              size={18}
             />
           </Link>
         </li>
