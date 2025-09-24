@@ -1,0 +1,49 @@
+---
+import Link from "#components/link.astro";
+import { PAGES } from "#consts";
+import Layout from "#layouts/layout.astro";
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+
+/**
+ * generates static paths for each tag page
+ * @returns array of static paths for each tag page
+ */
+export const getStaticPaths = (async () => {
+  /** all posts */
+  const posts = await getCollection("posts");
+  /** all tags (including duplicates) */
+  const tags = posts.flatMap((item) => item.data.tags ?? []);
+  /** unique tags, sorted alphabetically */
+  const uniqueTags = [...new Set(tags)].sort();
+
+  return uniqueTags.map((tag) => ({
+    params: { tag },
+  }));
+}) satisfies GetStaticPaths;
+
+/** tag to filter posts by */
+const tag = Astro.params.tag;
+/** all posts */
+const posts = await getCollection("posts");
+/** posts with the specified tag */
+const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+---
+
+<Layout
+  title={tag}
+  description={`Publicaciones de Jesús Castañer con la etiqueta "${tag}".`}
+>
+  <p>
+    Publicaciones con la etiqueta "{tag}" ({filteredPosts.length}):
+  </p>
+  <ul class="ml-3.5 list-[square]">
+    {
+      filteredPosts.map((post) => (
+        <li>
+          <Link href={`${PAGES.posts.href}/${post.id}`}>{post.data.title}</Link>
+        </li>
+      ))
+    }
+  </ul>
+</Layout>

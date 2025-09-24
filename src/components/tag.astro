@@ -1,4 +1,6 @@
 ---
+import Link from "#components/link.astro";
+import { PAGES } from "#consts";
 import { Icon } from "astro-icon/components";
 
 /** props for the tag component */
@@ -21,10 +23,15 @@ const { name, class: className } = Astro.props;
     className,
   ]}
 >
-  <Icon
-    name="tag"
-    size={18}
-    class="inline"
-  />
-  {name}
+  <Link
+    href={`${PAGES.tags.href}/${name}`}
+    noUnderline
+  >
+    <Icon
+      name="tag"
+      size={18}
+      class="inline"
+    />
+    {name}
+  </Link>
 </span>

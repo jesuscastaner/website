@@ -35,6 +35,14 @@ export const PAGES = {
     description: "Publicaciones de Jesús Castañer.",
   },
   /**
+   * tags page
+   */
+  tags: {
+    name: "Etiquetas",
+    href: "/tags",
+    description: "Búsqueda de contenido por etiquetas.",
+  },
+  /**
    * contact page
    */
   contact: {
