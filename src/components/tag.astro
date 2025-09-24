@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon/components";
+
+/** props for the tag component */
+type Props = {
+  /**
+   * tag name
+   */
+  name: string;
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { name, class: className } = Astro.props;
+---
+
+<span
+  class:list={[
+    "rounded-full rounded-tl-none border-6 border-double px-2 py-0.5",
+    className,
+  ]}
+>
+  <Icon
+    name="tag"
+    size={18}
+    class="inline"
+  />
+  {name}
+</span>

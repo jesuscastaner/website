@@ -1,6 +1,7 @@
 ---
 import FormattedDate from "#components/formatted-date.astro";
 import ShareLinks from "#components/share-links.astro";
+import Tag from "#components/tag.astro";
 import Layout from "#layouts/layout.astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -35,6 +36,17 @@ const { post } = Astro.props;
           class="my-6 inline"
         />
       </span>
+
+      <!-- tags -->
+      <ul class="my-6 flex flex-wrap gap-x-2 gap-y-5">
+        {
+          post.data.tags.map((tag) => (
+            <li>
+              <Tag name={tag} />
+            </li>
+          ))
+        }
+      </ul>
 
       <!-- social share links -->
       <ShareLinks class="my-6" />
