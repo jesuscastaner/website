@@ -21,22 +21,20 @@ const { post } = Astro.props;
   description={`${post.data.title} – por ${post.data.authors}.`}
 >
   <article>
-    <header>
+    <header class="my-6">
       <!-- title -->
-      <h1>{post.data.title}</h1>
+      <h1 class="italic">{post.data.title}</h1>
 
-      <!-- author(s) -->
-      <span class="text-2xl">{post.data.authors}</span>
+      <div class="my-6 flex flex-wrap items-end gap-x-3 gap-y-6">
+        <!-- author(s) -->
+        <span class="text-xl">{post.data.authors}</span>
 
-      <!-- publication date -->
-      <span>
-        –
+        <!-- publication date -->
         <FormattedDate
           date={post.data.pubDate}
           showCalendar
-          class="my-6 inline"
         />
-      </span>
+      </div>
 
       <!-- original publication -->
       {
@@ -55,7 +53,7 @@ const { post } = Astro.props;
       }
 
       <!-- tags -->
-      <ul class="my-6 flex flex-wrap gap-x-2 gap-y-5">
+      <ul class="my-6 flex flex-wrap gap-x-3 gap-y-5 py-1.5">
         {
           post.data.tags.map((tag) => (
             <li>
@@ -70,7 +68,7 @@ const { post } = Astro.props;
     </header>
 
     <!-- post body -->
-    <div class="mt-6">
+    <div class="my-6">
       <slot />
     </div>
   </article>
