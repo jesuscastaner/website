@@ -1,4 +1,5 @@
 ---
+import FormattedDate from "#components/formatted-date.astro";
 import Link from "#components/link.astro";
 import { PAGES, SITE } from "#consts";
 import Layout from "#layouts/layout.astro";
@@ -41,6 +42,10 @@ const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
     {
       filteredPosts.map((post) => (
         <li>
+          <FormattedDate
+            date={post.data.pubDate}
+            format="short"
+          />
           <Link href={`${PAGES.posts.href}/${post.id}`}>{post.data.title}</Link>
         </li>
       ))
