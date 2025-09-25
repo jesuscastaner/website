@@ -1,5 +1,6 @@
 ---
 import FormattedDate from "#components/formatted-date.astro";
+import Link from "#components/link.astro";
 import ShareLinks from "#components/share-links.astro";
 import Tag from "#components/tag.astro";
 import Layout from "#layouts/layout.astro";
@@ -36,6 +37,22 @@ const { post } = Astro.props;
           class="my-6 inline"
         />
       </span>
+
+      <!-- original publication -->
+      {
+        post.data.originalPub && (
+          <p>
+            Publicado originalmente en
+            {post.data.originalPub.url ? (
+              <Link href={post.data.originalPub.url}>
+                {post.data.originalPub.publisher}
+              </Link>
+            ) : (
+              post.data.originalPub.publisher
+            )}
+          </p>
+        )
+      }
 
       <!-- tags -->
       <ul class="my-6 flex flex-wrap gap-x-2 gap-y-5">

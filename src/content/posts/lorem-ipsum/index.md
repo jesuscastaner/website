@@ -1,6 +1,9 @@
 ---
 title: Lorem ipsum
 pubDate: 2025-09-23
+originalPub:
+  publisher: GitHub
+  url: https://github.com/jesuscastaner/website
 tags:
   - "lorem"
   - "ipsum"
