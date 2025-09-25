@@ -18,12 +18,18 @@ const posts = defineCollection({
      * post publication date
      */
     pubDate: z.coerce.date(),
-    /** original publication */
+    /**
+     * original publication
+     */
     originalPub: z
       .object({
-        /** name of the original publisher */
+        /**
+         * name of the original publisher
+         */
         publisher: z.string(),
-        /** url to the original publication */
+        /**
+         * url to the original publication
+         */
         url: z.string().url().optional(),
       })
       .optional(),
