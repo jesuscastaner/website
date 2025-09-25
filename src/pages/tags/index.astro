@@ -1,5 +1,5 @@
 ---
-import Tag from "#components/tag.astro";
+import Tags from "#components/tags.astro";
 import { PAGES } from "#consts";
 import Layout from "#layouts/layout.astro";
 import { getCollection } from "astro:content";
@@ -20,13 +20,9 @@ const uniqueTags = [...new Set(tags)].sort();
   <p>
     Selecciónese una etiqueta para ver todas las publicaciones relacionadas:
   </p>
-  <ul class="my-6 flex flex-wrap gap-x-2 gap-y-5">
-    {
-      uniqueTags.map((tag) => (
-        <li>
-          <Tag name={tag} />
-        </li>
-      ))
-    }
-  </ul>
+
+  <Tags
+    tagNames={uniqueTags}
+    class="my-6"
+  />
 </Layout>

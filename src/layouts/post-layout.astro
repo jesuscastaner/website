@@ -2,7 +2,7 @@
 import FormattedDate from "#components/formatted-date.astro";
 import Link from "#components/link.astro";
 import ShareLinks from "#components/share-links.astro";
-import Tag from "#components/tag.astro";
+import Tags from "#components/tags.astro";
 import Layout from "#layouts/layout.astro";
 import type { CollectionEntry } from "astro:content";
 
@@ -53,15 +53,10 @@ const { post } = Astro.props;
       }
 
       <!-- tags -->
-      <ul class="my-6 flex flex-wrap gap-x-3 gap-y-5 py-1.5">
-        {
-          post.data.tags.map((tag) => (
-            <li>
-              <Tag name={tag} />
-            </li>
-          ))
-        }
-      </ul>
+      <Tags
+        tagNames={post.data.tags}
+        class="my-6"
+      />
 
       <!-- social share links -->
       <ShareLinks class="my-6" />

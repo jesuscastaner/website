@@ -1,0 +1,38 @@
+---
+import Link from "#components/link.astro";
+import { PAGES } from "#consts";
+import { Icon } from "astro-icon/components";
+
+/** props for the tags component */
+type Props = {
+  /**
+   * tag names
+   */
+  tagNames: string[];
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { tagNames, class: className } = Astro.props;
+---
+
+<ul class:list={["flex flex-wrap gap-x-3 gap-y-3 py-1.5", className]}>
+  {
+    tagNames.map((tagName) => (
+      <li class="rounded-full rounded-tl-none border-6 border-double px-2 py-0.5">
+        <Link
+          href={`${PAGES.tags.href}/${tagName}`}
+          noUnderline
+        >
+          <Icon
+            name="tag"
+            size={18}
+            class="inline"
+          />
+          {tagName}
+        </Link>
+      </li>
+    ))
+  }
+</ul>
