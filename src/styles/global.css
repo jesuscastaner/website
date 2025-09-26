@@ -53,4 +53,8 @@
   p {
     @apply my-6;
   }
+
+  hr {
+    @apply border border-dashed;
+  }
 }
