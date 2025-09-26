@@ -1,6 +1,7 @@
 Abrahamsen
 Adès
 Aforisme
+Aimard
 Apellániz
 Aquiles
 ària
@@ -16,6 +17,7 @@ bilbaíno
 blagh
 blint
 borgiana
+Bronfman
 camerístico
 Castañer
 caxixis
@@ -36,6 +38,7 @@ experimentalidad
 Fabián
 facebook
 Fiennes
+Filarmónica
 frontalidad
 Gaigne
 Gehry
@@ -64,6 +67,7 @@ jesuscastaner
 João
 Josetxo
 kint
+Kocsis
 Kongelige
 Korsakov
 Kundera
@@ -83,6 +87,7 @@ operística
 Panisello
 Papagena
 Papageno
+Pentatone
 percusionista
 plantearle
 procesual
@@ -95,6 +100,7 @@ Reinbert
 reorquesté
 Rimsky
 Romanyà
+Salonen
 Sarastro
 Sciarrino
 SGAE
@@ -109,6 +115,7 @@ trièdrica
 txalapartas
 Verdú
 videoproyección
+visceralidad
 weberniana
 Widmann
 wirt
