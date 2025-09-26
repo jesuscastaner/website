@@ -2,6 +2,7 @@ Abrahamsen
 Adès
 Aforisme
 Aimard
+Analekta
 Apellániz
 Aquiles
 ària
@@ -11,6 +12,7 @@ Bauckholt
 Beneficència
 berguianos
 Berio
+Berlín
 Bernal
 bilbaína
 bilbaíno
@@ -24,6 +26,8 @@ caxixis
 chácena
 Chaves
 chelos
+Chordón
+Chorós
 claustrofóbica
 CNDM
 contrapuntísticas
@@ -74,6 +78,7 @@ Korsakov
 Kundera
 Laborintus
 Larreina
+lastrantes
 Leeuw
 linkedin
 Marija
@@ -100,6 +105,7 @@ refinadísimo
 Reinbert
 reorquesté
 Rimsky
+Rocaná
 Romanyà
 Salonen
 Sarastro
@@ -108,6 +114,7 @@ SGAE
 sigmático
 Snedronningen
 Sofía
+Tetzlaff
 Tevot
 tiernísimo
 tímbricas
@@ -115,6 +122,7 @@ toup
 tridimensionalidad
 trièdrica
 txalapartas
+Unsuk
 Verdú
 videoproyección
 visceralidad
