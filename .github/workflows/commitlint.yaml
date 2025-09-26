@@ -43,7 +43,7 @@ jobs:
           pnpm --version
           pnpm exec commitlint --version
 
-      - name: validate last commit
+      - name: validate last commits
         if: github.event_name == 'push'
         run:
           pnpm exec commitlint --from ${{ github.event.before }} --to ${{
