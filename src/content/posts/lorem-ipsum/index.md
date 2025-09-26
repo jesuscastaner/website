@@ -6,11 +6,11 @@ originalPub:
   publisher: GitHub
   url: https://github.com/jesuscastaner/website
 tags:
-  - "lorem"
-  - "ipsum"
-  - "dolor"
-  - "sit"
-  - "amet"
+  - lorem
+  - ipsum
+  - dolor
+  - sit
+  - amet
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet
