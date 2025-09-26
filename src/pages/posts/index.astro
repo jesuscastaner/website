@@ -7,6 +7,8 @@ import { getCollection } from "astro:content";
 
 /** all posts */
 const posts = await getCollection("posts");
+// sort posts by publication date, newest first
+posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <Layout

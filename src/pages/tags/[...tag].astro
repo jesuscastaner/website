@@ -29,6 +29,10 @@ const tag = Astro.params.tag;
 const posts = await getCollection("posts");
 /** posts with the specified tag */
 const filteredPosts = posts.filter((post) => post.data.tags.includes(tag));
+// sort filtered posts by publication date, newest first
+filteredPosts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <Layout
