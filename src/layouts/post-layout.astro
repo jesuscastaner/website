@@ -4,6 +4,7 @@ import Link from "#components/link.astro";
 import ShareLinks from "#components/share-links.astro";
 import Tags from "#components/tags.astro";
 import Layout from "#layouts/layout.astro";
+import Image from "astro/components/Image.astro";
 import type { CollectionEntry } from "astro:content";
 
 /** props for the post layout */
@@ -19,6 +20,7 @@ const { post } = Astro.props;
 <Layout
   title={post.data.title}
   description={`${post.data.title} – por ${post.data.authors}.`}
+  image={post.data.headerImg}
 >
   <article>
     <header class="my-6">
@@ -35,6 +37,22 @@ const { post } = Astro.props;
           showCalendar
         />
       </div>
+
+      <!-- header image -->
+      {
+        post.data.headerImg && (
+          <figure class="my-6 aspect-[2/1] w-full overflow-hidden border-2 lg:aspect-[5/2]">
+            <Image
+              src={post.data.headerImg}
+              alt="Imagen de cabecera"
+              loading="lazy"
+              width={1200}
+              height={630}
+              class="h-full w-full object-cover transition-transform duration-1500 ease-in-out hover:scale-105"
+            />
+          </figure>
+        )
+      }
 
       <!-- original publication -->
       {

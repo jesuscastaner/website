@@ -1,6 +1,7 @@
 ---
 title: Lorem ipsum
 pubDate: 2025-09-23
+headerImg: ./header.jpg
 originalPub:
   publisher: GitHub
   url: https://github.com/jesuscastaner/website
