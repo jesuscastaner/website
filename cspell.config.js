@@ -2,8 +2,15 @@ import { defineConfig } from "cspell";
 
 export default defineConfig({
   // languages and dictionaries
-  language: "en,es",
-  import: ["@cspell/dict-es-es/cspell-ext.json"],
+  language: "en,de,es,fr,it,la",
+  import: [
+    "@cspell/dict-de-de/cspell-ext.json",
+    "@cspell/dict-es-es/cspell-ext.json",
+    "@cspell/dict-fr-fr/cspell-ext.json",
+    "@cspell/dict-it-it/cspell-ext.json",
+    "@cspell/dict-la/cspell-ext.json",
+  ],
+
   dictionaryDefinitions: [
     {
       name: "dict-website",
