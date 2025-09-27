@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import icon from "astro-icon";
 import { defineConfig, fontProviders } from "astro/config";
@@ -10,6 +11,7 @@ export default defineConfig({
       iconDir: "src/assets/icons",
     }),
     mdx(),
+    sitemap(),
   ],
   vite: {
     plugins: [tailwindcss()],
