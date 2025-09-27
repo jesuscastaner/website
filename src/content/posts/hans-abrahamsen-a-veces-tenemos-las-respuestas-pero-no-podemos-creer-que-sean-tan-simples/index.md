@@ -1,7 +1,7 @@
 ---
 title:
-  "Hans Abrahamsen: A veces tenemos las respuestas, pero no podemos creer que
-  sean tan simples"
+  "Hans Abrahamsen: «A veces tenemos las respuestas, pero no podemos creer que
+  sean tan simples»"
 pubDate: 2023-03-20
 headerImg: ./header.jpg
 originalPub:
