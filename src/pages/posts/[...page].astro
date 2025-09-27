@@ -1,14 +1,34 @@
 ---
 import Card from "#components/card.astro";
+import Pagenav from "#components/pagenav.astro";
 import { PAGES } from "#consts";
 import Layout from "#layouts/layout.astro";
+import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
-/** all posts */
-const posts = await getCollection("posts");
-// sort posts by publication date, newest first
-posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+/** props for the posts page generator */
+type Props = {
+  /**
+   * current page object
+   */
+  page: Page<CollectionEntry<"posts">>;
+};
+const { page } = Astro.props;
+
+/**
+ * generates static paths for each posts page
+ * @param paginate function that splits an array of posts into multiple pages
+ * @returns array of static paths for each posts page
+ */
+export const getStaticPaths = (async ({ paginate }) => {
+  /** all posts */
+  const posts = await getCollection("posts");
+  // sort posts by publication date, newest first
+  posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  return paginate(posts, { pageSize: 18 });
+}) satisfies GetStaticPaths;
 
 /**
  * get a text excerpt from a post
@@ -30,16 +50,26 @@ function getExcerpt(post: CollectionEntry<"posts">, numWords: number): string {
     .replace(/\*(.*?)\*/g, "<em>$1</em>") // *italic*
     .replace(/_(.*?)_/g, "<em>$1</em>"); // _italic_
 }
+
+/** page description */
+const description = page
+  ? `${PAGES.posts.description} Página ${page.currentPage} de ${page.lastPage}.`
+  : PAGES.posts.description;
 ---
 
 <Layout
   title={PAGES.posts.name}
-  description={PAGES.posts.description}
+  description={description}
 >
   <h1>Publicaciones</h1>
+
+  <!-- page navigation, top -->
+  <Pagenav page={page} />
+
+  <!-- posts grid -->
   <ul class="my-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {
-      posts.map((post) => (
+      page.data.map((post) => (
         <li>
           <Card
             href={`${PAGES.posts.href}/${post.id}`}
@@ -53,4 +83,7 @@ function getExcerpt(post: CollectionEntry<"posts">, numWords: number): string {
       ))
     }
   </ul>
+
+  <!-- page navigation, bottom -->
+  <Pagenav page={page} />
 </Layout>

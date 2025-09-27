@@ -1,0 +1,52 @@
+---
+import Link from "#components/link.astro";
+import type { Page } from "astro";
+import { Icon } from "astro-icon/components";
+
+/** props for the pagenav component */
+type Props = {
+  /**
+   * current page object
+   */
+  page: Page;
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { page, class: className } = Astro.props;
+---
+
+{
+  page.lastPage > 1 && (
+    <nav
+      class:list={["my-8 flex items-center justify-center gap-4", className]}
+    >
+      {page.url.prev && (
+        <Link
+          href={page.url.prev}
+          title="Página anterior"
+          class="hover:text-accent text-background bg-foreground border-foreground hover:border-accent border-2 px-2 py-0.5"
+        >
+          <Icon
+            name="arrow"
+            class="-rotate-90"
+          />
+        </Link>
+      )}
+      {page.currentPage} / {page.lastPage}
+      {page.url.next && (
+        <Link
+          href={page.url.next}
+          title="Página siguiente"
+          class="hover:text-accent text-background bg-foreground border-foreground hover:border-accent border-2 px-2 py-0.5"
+        >
+          <Icon
+            name="arrow"
+            class="rotate-90"
+          />
+        </Link>
+      )}
+    </nav>
+  )
+}
