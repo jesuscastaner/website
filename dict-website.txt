@@ -3,10 +3,12 @@ Adès
 Aforisme
 Aimard
 Analekta
+Antti
 Apellániz
 Aquiles
 ària
 Artze
+Auvinen
 Barjac
 Bauckholt
 Beneficència
@@ -31,6 +33,7 @@ Chorós
 claustrofóbica
 CNDM
 contrapuntísticas
+crípticos
 cruzarla
 dosieres
 Enric
@@ -45,6 +48,7 @@ Fawr
 Ffrindiau
 Fiennes
 Filarmónica
+fragmentarismo
 frontalidad
 Gaigne
 Gehry
@@ -54,6 +58,7 @@ Gimeno
 Gomis
 gratuïta
 Griffiths
+guitarrística
 güldenen
 Hannigan
 Hexamerón
@@ -78,6 +83,7 @@ kint
 Kocsis
 Kongelige
 Korsakov
+Kumela
 Kundera
 Laborintus
 Larreina
@@ -100,6 +106,7 @@ Papageno
 Pentatone
 percusionista
 plantearle
+posmodernismo
 procesual
 pulsión
 Raschèr
@@ -108,20 +115,25 @@ Reescuchando
 refinadísimo
 Reinbert
 reorquesté
+resignificación
+Riikka
 Rimsky
 Rocaná
 Romanyà
 Salonen
+Saltz
 Sarastro
 Sciarrino
 SGAE
 sigmático
 Snedronningen
 Sofía
+Talvitie
 Tetzlaff
 Tevot
 tiernísimo
 tímbricas
+tímbricos
 toup
 transparentemente
 tridimensionalidad
@@ -132,5 +144,6 @@ Verdú
 videoproyección
 visceralidad
 weberniana
+Wennäkoski
 Widmann
 wirt
