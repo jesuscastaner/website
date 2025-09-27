@@ -9,4 +9,7 @@ export default {
 
   // ignore everything except these files
   ignoreFiles: ["!**/*.{astro,css}"],
+
+  // cache
+  cache: true,
 };

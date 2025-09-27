@@ -66,9 +66,16 @@ export default defineConfig({
   ignorePaths: [
     ".git/**",
     "*.json",
+    "dict-*.txt",
     "src/assets/**",
     "package-lock.json",
     "pnpm-lock.yaml",
     "pnpm-workspace.yaml",
   ],
+
+  // cache
+  cache: {
+    useCache: true,
+    cacheLocation: "node_modules/.cache/cspell/.cspellcache",
+  },
 });
