@@ -1,14 +1,35 @@
 ---
-import FormattedDate from "#components/formatted-date.astro";
-import Link from "#components/link.astro";
+import Card from "#components/card.astro";
 import { PAGES } from "#consts";
 import Layout from "#layouts/layout.astro";
+import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
 /** all posts */
 const posts = await getCollection("posts");
 // sort posts by publication date, newest first
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+/**
+ * get a text excerpt from a post
+ * @param post post entry
+ * @param numWords number of words to include in excerpt
+ * @returns excerpt string
+ */
+function getExcerpt(post: CollectionEntry<"posts">, numWords: number): string {
+  // if post has no body, return empty string
+  if (!post.body) return "";
+  /** post body split into words */
+  const words = post.body.trim().split(/\s+/);
+  /** excerpt string with the first n words of the post body */
+  const excerpt = words.slice(0, numWords).join(" ");
+
+  // convert some basic md syntax to html
+  return excerpt
+    .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // **bold**
+    .replace(/\*(.*?)\*/g, "<em>$1</em>") // *italic*
+    .replace(/_(.*?)_/g, "<em>$1</em>"); // _italic_
+}
 ---
 
 <Layout
@@ -16,15 +37,18 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   description={PAGES.posts.description}
 >
   <h1>Publicaciones</h1>
-  <ul class="ml-3.5 list-[square]">
+  <ul class="my-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
     {
       posts.map((post) => (
         <li>
-          <FormattedDate
+          <Card
+            href={`${PAGES.posts.href}/${post.id}`}
+            title={post.data.title}
+            image={post.data.headerImg}
             date={post.data.pubDate}
-            format="short"
-          />
-          <Link href={`${PAGES.posts.href}/${post.id}`}>{post.data.title}</Link>
+          >
+            <div set:html={getExcerpt(post, 20) + "..."} />
+          </Card>
         </li>
       ))
     }

@@ -1,0 +1,85 @@
+---
+import FormattedDate from "#components/formatted-date.astro";
+import Link from "#components/link.astro";
+import type { ImageMetadata } from "astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
+/** props for the card component */
+type Props = {
+  /**
+   * url to link the card to
+   */
+  href: string;
+  /**
+   * title of the card
+   */
+  title: string;
+  /**
+   * image to display in the card
+   */
+  image?: ImageMetadata;
+  /**
+   * date associated with the card
+   */
+  date?: Date;
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { href, title, image, date, class: className } = Astro.props;
+---
+
+<article
+  class:list={[
+    "flex h-full flex-col gap-6 overflow-hidden border-2 border-b-14 p-4",
+    className,
+  ]}
+>
+  <Link href={href}>
+    <!-- card image -->
+    {
+      image && (
+        <figure class="-mx-4 -mt-4 mb-6 aspect-[2/1] overflow-hidden border-b-2">
+          <Image
+            src={image}
+            alt={title}
+            class="h-full w-full object-cover"
+          />
+        </figure>
+      )
+    }
+
+    <!-- card title -->
+    <h2 class="mb-0 text-2xl">{title}</h2>
+  </Link>
+
+  <!-- card date -->
+  {
+    date && (
+      <FormattedDate
+        date={date}
+        format="short"
+        showCalendar
+      />
+    )
+  }
+
+  <!-- card description -->
+  <div class="flex-1">
+    <slot />
+  </div>
+
+  <!-- see more link -->
+  <Link
+    href={href}
+    class="text-center"
+  >
+    Ver más
+    <Icon
+      name="arrow"
+      class="inline rotate-90"
+    />
+  </Link>
+</article>
