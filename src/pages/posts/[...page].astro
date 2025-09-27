@@ -1,7 +1,7 @@
 ---
 import Card from "#components/card.astro";
 import Pagenav from "#components/pagenav.astro";
-import { PAGES } from "#consts";
+import { PAGES, SITE } from "#consts";
 import Layout from "#layouts/layout.astro";
 import type { GetStaticPaths, Page } from "astro";
 import type { CollectionEntry } from "astro:content";
@@ -62,6 +62,10 @@ const description = page
   description={description}
 >
   <h1>Publicaciones</h1>
+  <p>
+    Explore las publicaciones de {SITE.author}
+    – página {page.currentPage} de {page.lastPage}.
+  </p>
 
   <!-- page navigation, top -->
   <Pagenav page={page} />
