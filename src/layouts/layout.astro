@@ -1,5 +1,6 @@
 ---
 import fallbackImg from "#assets/images/fallback.jpg";
+import Breadcrumbs from "#components/breadcrumbs.astro";
 import Footer from "#components/footer.astro";
 import Header from "#components/header.astro";
 import { SITE } from "#consts";
@@ -23,11 +24,16 @@ type Props = {
    * if not provided, a fallback image will be used
    */
   image?: ImageMetadata;
+  /**
+   * whether to show breadcrumbs navigation
+   */
+  breadcrumbs?: boolean;
 };
 const {
   title,
   description = SITE.description,
   image = fallbackImg,
+  breadcrumbs,
 } = Astro.props;
 
 /* full title of the page */
@@ -132,6 +138,7 @@ const fullTitle = `${title} – ${SITE.name}`;
   <body>
     <Header />
     <main>
+      {breadcrumbs && <Breadcrumbs class="my-6" />}
       <slot />
     </main>
     <Footer />

@@ -1,0 +1,67 @@
+---
+import Link from "#components/link.astro";
+import { PAGES } from "#consts";
+import { Icon } from "astro-icon/components";
+
+/** props for the breadcrumbs component */
+type Props = {
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { class: className } = Astro.props;
+
+/** current path split into segments */
+const segments = Astro.url.pathname.replace(/\/+$/, "").split("/").slice(1);
+/** breadcrumbs for the current path */
+const breadcrumbs = [];
+
+for (let i = 0; i < segments.length; i++) {
+  /** unencoded version of the segment */
+  const decodedSegment = decodeURIComponent(segments[i]);
+  /** whether the segment is a page number */
+  const isPageNumber = /^\d+$/.test(decodedSegment);
+
+  if (isPageNumber && breadcrumbs.length > 0) {
+    // if the segment is a page number, append it to the last breadcrumb
+    breadcrumbs[breadcrumbs.length - 1] += ` (pág. ${decodedSegment})`;
+  } else {
+    // else, add it as a normal breadcrumb
+    breadcrumbs.push(segments[i]);
+  }
+}
+---
+
+<nav class:list={["text-sm", className]}>
+  <ol class="flex flex-wrap items-center gap-2">
+    <li>
+      <Link
+        href={PAGES.home.href}
+        title={PAGES.home.name}
+      >
+        <Icon
+          name="home"
+          size={14}
+        />
+      </Link>
+    </li>
+    {
+      breadcrumbs.map((breadcrumb, i) => {
+        /** whether the breadcrumb is the last one */
+        const isLast = i === breadcrumbs.length - 1;
+
+        return (
+          <li class="flex flex-wrap items-center gap-2">
+            /
+            {isLast ? (
+              <span>{breadcrumb}</span>
+            ) : (
+              <Link href={`/${breadcrumb}`}>{breadcrumb}</Link>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>

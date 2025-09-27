@@ -21,6 +21,7 @@ const { post } = Astro.props;
   title={post.data.title}
   description={`${post.data.title} – por ${post.data.authors}.`}
   image={post.data.headerImg}
+  breadcrumbs
 >
   <article>
     <header class="my-6">
