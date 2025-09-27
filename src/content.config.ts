@@ -12,6 +12,10 @@ const posts = defineCollection({
        */
       title: z.string(),
       /**
+       * post subtitle
+       */
+      subtitle: z.string().optional(),
+      /**
        * post author(s)
        */
       authors: z.string().or(z.array(z.string())).default(SITE.author),

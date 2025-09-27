@@ -24,8 +24,17 @@ const { post } = Astro.props;
 >
   <article>
     <header class="my-6">
-      <!-- title -->
-      <h1 class="italic">{post.data.title}</h1>
+      <div class="italic">
+        <!-- title -->
+        <h1>{post.data.title}</h1>
+
+        <!-- subtitle -->
+        {
+          post.data.subtitle && (
+            <span class="text-2xl lg:text-3xl">{post.data.subtitle}</span>
+          )
+        }
+      </div>
 
       <div class="my-6 flex flex-wrap items-end gap-x-3 gap-y-6">
         <!-- author(s) -->
