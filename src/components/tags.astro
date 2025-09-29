@@ -17,7 +17,10 @@ type Props = {
 const { tagNames, class: className } = Astro.props;
 ---
 
-<ul class:list={["flex flex-wrap gap-x-3 gap-y-3 py-1.5", className]}>
+<ul
+  data-pagefind-ignore
+  class:list={["flex flex-wrap gap-x-3 gap-y-3 py-1.5", className]}
+>
   {
     tagNames.map((tagName) => (
       <li class="rounded-full rounded-tl-none border-6 border-double px-2 py-0.5">
