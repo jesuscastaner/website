@@ -10,10 +10,8 @@ node_modules/
 # pagefind search index
 public/pagefind/
 
-# logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# package manager files
+.pnpm-store/
 pnpm-debug.log*
 
 # environment variables
