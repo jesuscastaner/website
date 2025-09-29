@@ -1,0 +1,15 @@
+---
+import SearchBar from "#components/search-bar.astro";
+import { PAGES } from "#consts";
+import Layout from "#layouts/layout.astro";
+---
+
+<Layout
+  title={PAGES.search.name}
+  description={PAGES.search.description}
+  breadcrumbs
+>
+  <h1>{PAGES.search.name}</h1>
+  <p>Introduzca los términos que desea buscar:</p>
+  <SearchBar />
+</Layout>

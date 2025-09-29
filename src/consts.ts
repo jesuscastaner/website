@@ -50,6 +50,14 @@ export const PAGES = {
     description: "Búsqueda de contenido por etiquetas.",
   },
   /**
+   * search page
+   */
+  search: {
+    name: "Buscar",
+    href: "/search",
+    description: "Búsqueda de contenido en el sitio web.",
+  },
+  /**
    * contact page
    */
   contact: {

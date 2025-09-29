@@ -57,4 +57,17 @@
   hr {
     @apply border border-dashed;
   }
+
+  mark {
+    @apply bg-accent selection:bg-accent;
+  }
+}
+
+.pagefind-ui {
+  --pagefind-ui-text: var(--color-foreground);
+  --pagefind-ui-background: var(--color-background);
+  --pagefind-ui-border: var(--color-foreground);
+  --pagefind-ui-border-radius: 0px;
+  --pagefind-ui-image-border-radius: 0px;
+  --pagefind-ui-font: var(--font-default);
 }

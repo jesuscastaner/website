@@ -1,0 +1,142 @@
+---
+import { Icon } from "astro-icon/components";
+
+/** props for the search bar component */
+type Props = {
+  /**
+   * placeholder text for the search input
+   */
+  placeholder?: string;
+};
+const { placeholder = "Escriba aquí..." } = Astro.props;
+---
+
+<div class="w-full">
+  <div class="flex items-center gap-2 border-2 px-2 py-1">
+    <Icon
+      name="search"
+      size={20}
+      class="inline"
+    />
+    <input
+      id="search"
+      type="search"
+      placeholder={placeholder}
+      autocomplete="off"
+      class="flex-1 px-2 py-1"
+    />
+  </div>
+  <div
+    id="search-results"
+    class="my-6 flex flex-col"
+  >
+  </div>
+</div>
+
+<script is:inline>
+  /** cached pagefind instance */
+  let pagefind;
+  /** cached latest query */
+  let lastQ = "";
+  /** search input element */
+  const input = document.getElementById("search");
+  /** container for all search results */
+  const resultsContainer = document.getElementById("search-results");
+
+  // add event listener for input changes
+  input.addEventListener("input", async (e) => {
+    // clear previous message or results
+    resultsContainer.textContent = "";
+
+    /** current search query */
+    const q = (e.target.value || "").trim();
+    // update latest query
+    lastQ = q;
+
+    // if query is empty, clear results container and return
+    if (!q) {
+      resultsContainer.textContent = "";
+      return;
+    }
+
+    // else, show loading message and load pagefind (if not already loaded)
+    resultsContainer.textContent = "Buscando...";
+    if (!pagefind) {
+      try {
+        pagefind = await import("/pagefind/pagefind.js");
+        pagefind?.options?.({ ranking: { pageLength: 0.5 } });
+        pagefind?.init?.();
+      } catch {
+        // if load fails, show error message
+        resultsContainer.textContent =
+          "Se ha producido un error al cargar el índice de búsqueda.";
+        return;
+      }
+    }
+
+    // perform search
+    /** search results array */
+    let results = [];
+    try {
+      /** pagefind search response */
+      const response = await pagefind.debouncedSearch(q, {}, 300);
+      results = response?.results ?? [];
+    } catch {
+      // if search fails, show error message
+      resultsContainer.textContent =
+        "Se ha producido un error al ejecutar la búsqueda.";
+      return;
+    }
+
+    // if query has changed since search started, ignore these results
+    if (lastQ !== q) {
+      return;
+    }
+
+    // if no results, show message
+    if (!results.length) {
+      resultsContainer.textContent = "No hay resultados.";
+      return;
+    }
+
+    // else, show results
+    resultsContainer.textContent = `Resultados obtenidos: ${results.length}.`;
+    /** list with all search results */
+    const resultsList = document.createElement("ul");
+    resultsList.className = "mt-6 border-t-2";
+    resultsContainer.appendChild(resultsList);
+    for (const result of results) {
+      try {
+        /** search result data */
+        const data = await result.data();
+        /** list item with an individual search result */
+        const resultItem = document.createElement("li");
+
+        // set up list item content and styles
+        /** link to search result */
+        const link = document.createElement("a");
+        link.href = data.url;
+        link.className = "block my-6 text-2xl font-semibold underline";
+        link.innerHTML = `${data.meta?.title ?? data.url}`;
+        /** text excerpt of search result */
+        const excerpt = document.createElement("p");
+        excerpt.innerHTML = `...${data.excerpt}...`;
+
+        // append link and excerpt to list item
+        resultItem.appendChild(link);
+        resultItem.appendChild(excerpt);
+
+        // append list item to results list
+        resultsList.appendChild(resultItem);
+      } catch {
+        // if rendering a result fails, show error message and skip it
+        /** error message */
+        const errorMsg = document.createElement("p");
+        errorMsg.textContent =
+          "Se ha producido un error al mostrar un resultado.";
+        resultsContainer.appendChild(errorMsg);
+        continue;
+      }
+    }
+  });
+</script>
