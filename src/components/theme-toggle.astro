@@ -1,0 +1,48 @@
+---
+import { Icon } from "astro-icon/components";
+
+/** props for the theme-toggle component */
+type Props = {
+  /**
+   * additional classes
+   */
+  class?: string;
+};
+const { class: className } = Astro.props;
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  title="Alternar tema claro/oscuro"
+  class:list={[
+    "hover:text-accent relative flex h-6 w-6 items-center justify-center",
+    className,
+  ]}
+>
+  <Icon
+    name="sun"
+    size={18}
+    class="absolute hidden dark:inline"
+  />
+  <Icon
+    name="moon"
+    size={18}
+    class="absolute dark:hidden"
+  />
+</button>
+
+<script>
+  // add event listener to toggle theme on button click
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    if (localStorage.theme === "dark") {
+      // if dark theme is active, switch to light theme
+      localStorage.theme = "light";
+      document.documentElement.classList.remove("dark");
+    } else {
+      // else, switch to dark theme
+      localStorage.theme = "dark";
+      document.documentElement.classList.add("dark");
+    }
+  });
+</script>

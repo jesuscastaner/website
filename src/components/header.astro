@@ -1,5 +1,6 @@
 ---
 import Link from "#components/link.astro";
+import ThemeToggle from "#components/theme-toggle.astro";
 import { PAGES, SITE } from "#consts";
 import { Icon } from "astro-icon/components";
 
@@ -57,7 +58,7 @@ const segments = path.match(/[^/]+/g);
 
     <!-- menu items -->
     <div
-      class="bg-background fixed inset-y-0 right-0 z-40 flex w-2/3 translate-x-full flex-col border-l-2 p-6 group-focus-within:translate-x-0 group-focus-within:transition-transform group-focus-within:duration-300 md:relative md:w-auto md:translate-x-0 md:flex-row md:items-center md:border-none md:p-0"
+      class="bg-background fixed inset-y-0 right-0 z-40 flex w-2/3 translate-x-full flex-col justify-between gap-6 border-l-2 p-6 group-focus-within:translate-x-0 group-focus-within:transition-transform group-focus-within:duration-300 md:relative md:w-auto md:translate-x-0 md:flex-row md:items-center md:border-none md:p-0"
     >
       <!-- navbar -->
       <nav>
@@ -91,6 +92,9 @@ const segments = path.match(/[^/]+/g);
           }
         </ul>
       </nav>
+
+      <!-- theme toggle -->
+      <ThemeToggle class="self-center" />
     </div>
   </div>
 </header>

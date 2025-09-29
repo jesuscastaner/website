@@ -43,6 +43,16 @@ const fullTitle = `${title} – ${SITE.name}`;
 <!doctype html>
 <html lang={SITE.lang}>
   <head>
+    <!-- theme initialization -->
+    <script is:inline>
+      document.documentElement.classList.toggle(
+        "dark",
+        localStorage.theme === "dark" ||
+          (!("theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches),
+      );
+    </script>
+
     <!-- global metadata -->
     <meta charset="utf-8" />
     <meta
