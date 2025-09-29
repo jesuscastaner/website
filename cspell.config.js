@@ -67,6 +67,7 @@ export default defineConfig({
     ".git/**",
     "*.json",
     "dict-*.txt",
+    "public/",
     "src/assets/**",
     "package-lock.json",
     "pnpm-lock.yaml",
