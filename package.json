@@ -3,9 +3,10 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "pnpm run build && pnpm run dev:astro",
+    "dev:astro": "astro dev",
     "build": "astro build && pnpm dlx pagefind --site dist && pnpm dlx shx cp -r dist/pagefind public/",
-    "preview": "astro preview",
+    "preview": "pnpm run build && astro preview",
     "sync": "astro sync",
     "upgrade": "pnpm dlx @astrojs/upgrade",
     "check": "pnpm run check:astro && pnpm run check:js && pnpm run check:css && pnpm run check:md && pnpm run check:format && pnpm run check:spell",
