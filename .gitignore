@@ -28,3 +28,9 @@ pnpm-debug.log*
 
 # personal notes
 .notes/
+
+# cache
+.cspellcache
+.eslintcache
+.prettier-cache
+.stylelintcache
