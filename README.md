@@ -1,7 +1,14 @@
-# jesuscastaner.com
-
-🌐 my personal website, built with [astro](https://astro.build/) – visit it at
-[jesuscastaner.com](https://jesuscastaner.com/)
+<h1
+  align="center"
+  style="font-family: 'Fira Code', monospace; color: #07ce00;"
+>
+  jesuscastaner.com
+</h1>
+<p align="center">
+  🌐 my personal website, built with <a href="https://astro.build">astro</a>
+  <br/>
+  – visit it at <a href="https://jesuscastaner.com">jesuscastaner.com</a>
+</p>
 
 ## tech & features
 
