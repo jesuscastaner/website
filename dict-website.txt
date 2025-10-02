@@ -78,6 +78,7 @@ Feyerabend
 Ffrindiau
 Fiennes
 Filarmónica
+Filharmònica
 fragmentarismo
 Fremen
 Gehry
@@ -93,11 +94,13 @@ Hannigan
 Hernán
 Hexamerón
 Hezbolá
+Hidd’n
 hildegardiana
 Hommel
 Huarte
 Huici
 Hwyl
+Hyperlude
 ICMA
 identitarias
 Idoia
@@ -107,6 +110,7 @@ iniciático
 inmovilismo
 inoperancia
 inquietantemente
+institutionalised
 interconectividad
 Introducció
 Iruñeko
@@ -127,6 +131,7 @@ Kumela
 Kundera
 Laborintus
 Lachenmann
+Lalula
 lastrantes
 Leeuw
 letánica
@@ -151,6 +156,7 @@ ontologizarnos
 operística
 operístico
 opiáceos
+Orquestra
 OSPA
 pagefind
 pagenav
@@ -205,11 +211,14 @@ Tomás
 Topaketak
 toup
 transparentemente
+travelled
 tridimensionalidad
 trièdrica
 txalaparta
 ultraderecha
+Universitat
 Unsuk
+València
 Verdú
 vertebradores
 Viena
@@ -219,3 +228,4 @@ weberniana
 Wennäkoski
 Widmann
 wirt
+Zaterdag
