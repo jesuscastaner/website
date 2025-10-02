@@ -10,7 +10,6 @@ export default defineConfig({
     "@cspell/dict-it-it/cspell-ext.json",
     "@cspell/dict-la/cspell-ext.json",
   ],
-
   dictionaryDefinitions: [
     {
       name: "dict-website",
