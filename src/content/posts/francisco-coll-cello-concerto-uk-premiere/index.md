@@ -1,7 +1,7 @@
 ---
 title: "Francisco Coll’s Cello Concerto"
 subtitle: "Program Notes for the UK Premiere at the BBC Proms"
-pubDate: 2021-05-21
+pubDate: 2024-08-18
 headerImg: ./header.jpg
 originalPub:
   publisher: BBC Proms
