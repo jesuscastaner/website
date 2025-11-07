@@ -40,8 +40,8 @@ armónico ya muy desarrollado, en un uso extraordinariamente rico de los colores
 de la orquesta y el coro, y, sobre todo, en un profundo y maduradísimo sentido
 dramático, a través del cual Coll ha sabido retratar magistralmente el
 progresivo endurecimiento emocional de los personajes, a menudo expuestos a
-ridiculizaciones musicales que desnudaban la polarización de sus posiciones o la
-ingenuidad de sus propias convicciones.
+ridiculizaciones musicales que dejaban al descubierto la polarización de sus
+posiciones o la ingenuidad de sus propias convicciones.
 
 Coll contaba, además, con el respaldo de un reducido pero preparadísimo plantel
 de solistas que entendió sin problemas la idea y que, incluso en los papeles
