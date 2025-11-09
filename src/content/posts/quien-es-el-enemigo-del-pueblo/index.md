@@ -13,16 +13,16 @@ tags:
   - siglo-xxi
 ---
 
-Siempre me han llamado la atención la facilidad y la inmediatez con las que todo
-aquel que se asoma a _Un enemigo del pueblo_, caiga del lado que caiga, tiende a
-alinearse sin fisuras con los reclamos del honorable doctor Stockmann, sin
-reparar en las barbaridades que llega a pronunciar ni en la violencia moral con
-que trata de imponer su verdad. Y desde luego que me saca una pequeña sonrisa la
-ironía de que, en la entusiasta publicitación de este estreno, se haya repetido
-el fenómeno con total exactitud. La genialidad de Ibsen —y lo que explica en
-parte su intemporalidad— reside, precisamente, en que lo deja todo en tierra de
-nadie. «¿Quién es el enemigo del pueblo?», preguntaban algunos medios al
-compositor hace unos días. Bueno; ése es justamente uno de los logros más
+Siempre nos han llamado la atención la facilidad y la inmediatez con las que
+todo aquel que se asoma a _Un enemigo del pueblo_, caiga del lado que caiga,
+tiende a alinearse sin reservas con los reclamos del honorable doctor Stockmann,
+sin reparar en las barbaridades que llega a pronunciar ni en la violencia moral
+con que trata de imponer su verdad. Y desde luego que nos saca una pequeña
+sonrisa la ironía de que, en la entusiasta publicitación de este estreno, se
+haya repetido el fenómeno con total exactitud. La genialidad de Ibsen —y lo que
+explica en parte su intemporalidad— reside, precisamente, en que lo deja todo en
+tierra de nadie. «¿Quién es el enemigo del pueblo?», preguntaban algunos medios
+al compositor hace unos días. Bueno; ése es justamente uno de los logros más
 notables de la ópera: haber sabido salvaguardar sus interrogantes de la infantil
 contraposición moral entre «buenos» y «malos», y ofrecer, en su lugar, una
 mirada más compleja y matizada —en el fondo, más humana— sobre sus personajes y
@@ -71,13 +71,12 @@ destino sostenido en la verdad, la empatía y el amor. Quizá no esté de más
 señalar que, aun con toda la calidez humana que irradiaban estos últimos
 compases, _Enemigo del pueblo_ dista mucho de presentarse como una ópera
 optimista o esperanzadora. La tristeza subyacente era más que palpable y, de
-hecho, la posibilidad real de materializar la utopía proyectada resulta,
-francamente, muy dudosa. Bajo la superficie, bien profundo, la música tenía un
-color en realidad tan gris y entumecido como el abismo que ya tan sólo quedaba
-tras las dunas. Un gris, en fin, muy parecido a aquél que, más allá de las
-abstracciones vacías y tramposas con que suele revestirse el texto de Ibsen,
-seguro acabará impregnando nuestra realidad social más inmediata: la de un
-«pueblo» en el que tantísimas personas, cargadas de muchas certezas y pocas
-dudas, pretenden tener siempre y a cualquier precio la razón. Incluso cuando
-tales convicciones exigen el sacrificio de un conciudadano, de un amor, de un
-hermano o de una hija.
+hecho, la posibilidad real de materializar la utopía proyectada resultaba,
+francamente, muy dudosa. Bajo la superficie, la música tenía un color en
+realidad tan gris y entumecido como el abismo que ya tan sólo quedaba tras las
+dunas. Un gris, en fin, muy parecido a aquél que, más allá de las abstracciones
+vacías y tramposas con que suele revestirse el texto de Ibsen, seguro acabará
+impregnando nuestra realidad social más inmediata: la de un «pueblo» en el que
+tantísimas personas, cargadas de muchas certezas y pocas dudas, pretenden tener
+siempre y a cualquier precio la razón. Incluso cuando tales convicciones exigen
+el sacrificio de un conciudadano, de un amor, de un hermano o de una hija.
